@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@500&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+}
+header{
+    width: 85%;
+    height: 95%;
+    border-radius: 33px;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 100% 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+                rgba(0, 0, 0, 0.12) 0px -12px 30px,
+                rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+header .left_bx1, .right_bx1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .left_bx1{
+    background: linear-gradient(#a396a9, #C4B5CB);
+}
+header .right_bx1{
+    background: linear-gradient(#0F0430, #230562, #3D068C, #18054C);
+}
+header .left_bx1 .content{
+    width: 75%;
+    height: auto;
+    padding: 25px 20px;
+    background: white;
+}
+header .left_bx1 .content .card{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+header .left_bx1 .content .card label{
+    font-size: 14px;
+}
+header .left_bx1 .content .card input{
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid rgb(154, 154, 154);
+    background: rgb(238, 238, 238);
+    margin-top: 5px;
+}
+header .left_bx1 .content .submit{
+    margin-top: 30px;
+    padding: 8px 20px;
+    color: white;
+    background: linear-gradient(to right, #f470b4 50%, #a61975);
+    border: none;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+}
+header .left_bx1 .content .check{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+header .left_bx1 .content .check span{
+    margin-left: 5px;
+    font-size: 13px;
+}
+header .left_bx1 .content p{
+    margin-top: 90px;
+    text-align: center;
+    font-size: 13px;
+}
+header .left_bx1 .content p a{
+    text-decoration: none;
+    color: rgb(105, 36, 255);
+    font-weight: bold;
+}
+header .right_bx1 img{
+    width: 679px;
+    height: 514.5;
+}
+header .right_bx1 h3{
+    position: absolute;
+    background: rgb(255, 185, 246);
+    color: black;
+    right: 0;
+    bottom: 20px;
+    padding: 3px 10px;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 13px;
+}

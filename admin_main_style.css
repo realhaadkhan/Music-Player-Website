@@ -1,0 +1,744 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-image: url('adminBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+}
+
+header {
+    width: 85%;
+    height: 95%;
+    border-radius: 33px;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+header .menu {
+    color: #FFFFFF;
+    background: linear-gradient( #1F3044 ,  #394a5e, #697689, #8392a5);
+}
+
+header .menu .logoNname {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 30px 0 0 30px;
+}
+
+header .menu .logoNname img {
+    width: 40px;
+    margin-right: 15px;
+}
+
+header .menu .items {
+    margin-top: 40px;
+}
+
+header .menu .items li {
+    list-style: none;
+    padding: 15px 0;
+    transition: 0.3 ease;
+}
+
+header .menu .items li:hover {
+    background: #cbcdd3b0;
+    /* opacity: 0.2; */
+    /* transition: opacity .5s; */
+    cursor: pointer;
+}
+
+header .menu .items li:nth-child(1) {
+    border-left: 4px solid white;
+}
+
+header .menu .items li i {
+    color: grey;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 10px 0 25px;
+}
+
+header .menu .items li:hover i,
+header .menu .items li:hover a {
+    color: white;
+}
+
+header .menu .items li a {
+    text-decoration: none;
+    font-weight: 300px;
+    color: grey;
+    transition: 0.3 ease;
+}
+
+header .board {
+    color: #1A0930;
+    background: linear-gradient(#c3c7d0, #dee1e6);
+}
+
+header .board nav {
+    width: 90%;
+    height: 10%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+
+header .board nav .search {
+    position: relative;
+    width: 40%;
+    padding: 1px 10px;
+    border-radius: 20px;
+    color: #2c333d;
+}
+
+header .board nav .search::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #9ea2b1ad;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+header .board nav .search .searchResults {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    z-index: 2;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+header .board nav .search .searchResults::-webkit-scrollbar {
+    display: none;
+}
+
+header .board nav .search .searchResults .card {
+    width: 100%;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #6b7c8c72;
+    margin-bottom: 5px;
+    text-decoration: none;
+    display: none;
+}
+
+header .board nav .search .searchResults .card img {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+header .board nav .search .searchResults .card .content {
+    width: 80%;
+    height: 100%;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 600px;
+    color: #fff1f5;
+
+}
+
+header .board nav .search .searchResults .card .content .artist {
+    color: rgb(228, 228, 228);
+    font-weight: 500px;
+}
+
+header .board nav .search .bi {
+    font-size: 13px;
+    padding: 3px 0px 0px 10px;
+    position: relative;
+}
+
+header .board nav .search input {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0px 10px;
+    position: relative;
+    color: #30343d;
+    font-size: 12px;
+}
+
+header .board nav .profile-dropDown .user {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+header .board nav .profile-dropDown .user i {
+    position: absolute;
+    right: -18px;
+    bottom: -20px;
+    font-size: 50px;
+    color: rgb(84, 255, 84);
+    z-index: 1;
+}
+
+header .board nav .profile-dropDown .user img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+header .board nav .profile-dropDown .profile-dropDown-List {
+    z-index: 2;
+    display: inline-block;
+    position: absolute;
+    top: 60px;
+    width: 150px;
+    right: 13px;
+    background-color: #8e9eb5;
+    border-radius: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.1s, overflow 0.1s, padding 0.1s;
+}
+
+.profile-dropDown-List.open-dropDown {
+    padding: 8px 7px;
+    overflow: visible !important;
+    max-height: 160px !important;
+}
+
+header .board nav .profile-dropDown .profile-dropDown-List h4 {
+    color: #040C31;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 0.7rem;
+    padding: 10px 0px;
+    text-align: center;
+    width: 100%;
+}
+
+header .board nav .profile-dropDown .profile-dropDown-List h4 .use {
+    margin-left: 38px;
+    margin-right: 38px;
+    width: 60px;
+    height: 60px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-radius: 50%;
+}
+
+header .board nav .profile-dropDown .profile-dropDown-List h4 .use img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+header .board nav .profile-dropDown .profile-dropDown-List h4 .dtl {
+    color: #FFFFFF;
+    margin: 5px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+header .board nav .profile-dropDown .profile-dropDown-List h4 div {
+    font-size: 10px;
+    font-weight: 400;
+    color: #3e393f;
+    margin: 3px;
+    /* width: 100%; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+header .board nav .profile-dropDown .profile-dropDown-List::after {
+    content: '';
+    background-color: #8e9eb5;
+    height: 20px;
+    position: absolute;
+    right: 40px;
+    transform: rotate(45deg);
+    top: -5px;
+    width: 15px;
+}
+
+header .board nav .profile-dropDown .profile-dropDown-List hr {
+    width: 100%;
+    color: #040C31;
+    border-top: 1px solid #040C31;
+}
+
+header .board nav .profile-dropDown .profile-dropDown-List ul li {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+header .board nav .profile-dropDown .profile-dropDown-List ul li a {
+    display: inline-block;
+    color: #040C31;
+    font-size: 11px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+header .board nav .profile-dropDown .profile-dropDown-List ul li:hover a {
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
+    color: #132033;
+}
+
+header .board .overview {
+    width: 95%;
+    height: auto;
+    margin: auto;
+    margin-top: 15px;
+}
+
+header .board .overview .h4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .board .overview .h4 .bi {
+    color: gray;
+    cursor: pointer;
+    transition: 0.3s linear;
+}
+
+header .board .pop_aroverviewists .h4 .bi:hover {
+    color: white;
+}
+
+header .board .overview .card {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin-top: 15px;
+    display: flex;
+    overflow: auto;
+    scroll-behavior: smooth;
+    justify-content: space-around;
+}
+
+header .board .overview .card li {
+    background: white;
+    width: 235px;
+    padding: 16px 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+header .board .overview .card li i {
+    margin-bottom: 10px;
+    font-size: 35px;
+    color: #2c333b;
+}
+
+header .board .overview .card li .details {
+    font-weight: 700;
+}
+
+header .board .songs {
+    width: 95%;
+    height: auto;
+    margin: auto;
+    margin-top: 25px;
+}
+
+header .board .songs .h4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .board .songs .nav {
+    list-style-type: none;
+    position: relative;
+    margin: 20px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 5px 0px 5px 0px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: #23334a;
+}
+
+header .board .songs .nav li {
+    padding: 6px 9px 6px 9px;
+    color: white;
+}
+
+header .board .songs .nav li:nth-child(1) {
+    margin-left: 20px;
+}
+
+header .board .songs .nav li:nth-child(2) {
+    margin-left: 210px;
+}
+
+header .board .songs .nav li:nth-child(3) {
+    margin-left: 250px;
+}
+
+header .board .songs .nav li:nth-child(4) {
+    margin-left: 175px;
+}
+
+header .board .songs .nav li:nth-child(5) {
+    margin-left: 80px;
+}
+
+header .board .songs .songList {
+    width: 100%;
+    height: 375px;
+    display: inline-block;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+header .board .songs .songList::-webkit-scrollbar {
+    display: none;
+}
+
+header .board .songs .songList .favSongCard {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #4c4757;
+    width: 100%;
+    height: 55px;
+    margin: 10px 0;
+    padding: 5px;
+    overflow: visible;
+    margin-left: 0px;
+    transition: margin-left .5s;
+}
+
+header .board .songs .songList .favSongCard.swp{
+    margin-left: 1000px;
+}
+
+header .board .songs .songList .favSongCard .addIcon {
+    color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    z-index: 3;
+}
+
+header .board .songs .songList .favSongCard .addIcon .addSongDown{
+    margin-top: 39px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+header .board .songs .songList .favSongCard .addIcon .addSongUp{
+    visibility: hidden;
+    opacity: 0;
+}
+
+header .board .songs .songList .favSongCard:hover .addIcon .addSongDown.tenty {
+    visibility: visible;
+    opacity: 1;
+    color: white;
+}
+
+header .board .songs .songList .favSongCard:hover .addIcon .addSongUp.tenty {
+    visibility: visible;
+    opacity: 1;
+    color: white;
+}
+
+header .board .songs .songList .favSongCard .addIcon .addSongDown:hover, .addSongUp:hover {
+    font-size: 20px;
+}
+
+header .board .songs .songList .favSongCard.delIt {
+    margin-left: 1100px;
+    transition: margin-left 0.5s;
+}
+
+header .board .songs .songList .favSongCard:hover,
+.favSongCard.active {
+    color: white !important;
+    background: rgba(26, 9, 48, 0.137);
+    transition: 0.3s;
+}
+
+header .board .songs .songList .favSongCard .srNo {
+    margin-left: 10px;
+    margin-right: 40px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+header .board .songs .songList .favSongCard .subCard {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+header .board .songs .songList .favSongCard .subCard .imgBox {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    border-radius: 0.5em;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+header .board .songs .songList .favSongCard .subCard .imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header .board .songs .songList .favSongCard .subCard .dtCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .board .songs .songList .favSongCard .subCard .dtCard .songName {
+    display: flex;
+    align-items: center;
+    width: 280px;
+    margin-left: 30px;
+    justify-content: center;
+}
+
+header .board .songs .songList .favSongCard .subCard .dtCard .songName h5 {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+header .board .songs .songList .favSongCard .subCard .dtCard .artistName {
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+}
+
+header .board .songs .songList .favSongCard .subCard .dtCard .artistName h5 {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+header .board .songs .songList .favSongCard .subCard .dtCard .iconCard {
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .board .songs .songList .favSongCard .subCard .dtCard .iconCard .duration {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+header .board .songs .songList .favSongCard .subCard .dtCard .iconCard .ratings {
+    width: 50px;
+    margin-right: 5px;
+    margin-left: 40px;
+}
+
+header .board .songs .songList .favSongCard .subCard .dtCard .iconCard .ratings i {
+    font-size: 12px;
+}
+
+header .board .songs .songList .favSongCard .subCard .dtCard .iconCard .del {
+    display: flex;
+    width: 30px;
+}
+
+header .board .songs .songList .favSongCard .subCard .dtCard .iconCard .del i {
+    font-size: 20px;
+}
+
+header .board .songs .songList .favSongCard:hover .subCard .dtCard .iconCard .del i {
+    text-shadow: 0px 0px;
+    color: #848484;
+}
+
+header .board .songs .songList .favSongCard .subCard .dtCard .iconCard .del i:hover {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: font-size 0.3s;
+}
+
+header .board .popInput {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    padding: 20px 30px;
+    background-color: #445368;
+    color: white;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header .board .popInput.active{
+    display: flex;
+}
+
+header .board .popInput .closeBtn {
+    position: absolute;
+    top: 22px;
+    right: 23px;
+    width: 30px;
+    height: 30px;
+    background: grey;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+header .board .popInput h3 {
+    margin-bottom: 19px;
+    /* margin-left: 0; */
+    margin-right: 216px;
+}
+
+header .board .popInput .uploadThumbnail {
+    width: 130px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: -2px;
+}
+
+header .board .popInput .uploadThumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header .board .popInput .uploadThumbnail input {
+    position: absolute;
+    right: -1px;
+    width: 34px;
+    top: -4px;
+    z-index: 1;
+    font-size: 26px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+header .board .popInput .uploadThumbnail label {
+    position: absolute;
+    top: 153px;
+    width: 30px;
+    height: 30px;
+    padding: 6px 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    background-color: grey;
+    top: 165px;
+    left: 239px;
+    overflow: hidden;
+
+}
+
+header .board .popInput .card {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+header .board .popInput .card label {
+    margin-top: 15px;
+    font-size: 15px;
+    color: white;
+}
+
+header .board .popInput .card input {
+    width: 254px;
+    height: 30px;
+    margin-top: 3px;
+    border-radius: 5px;
+    padding: 6px 10px;
+    border: 1px solid rgb(154, 154, 154);
+    background: rgb(238, 238, 238);
+}
+
+header .board .popInput .btnSub {
+    padding: 8px 20px;
+    color: white;
+    background: #040C31;
+    width: 100px;
+    cursor: pointer;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    margin-top: 18px;
+}
