@@ -1,11 +1,13 @@
-# Project Name
+# Music Player Website
 
-A PHP and JavaScript-based project for [brief description of your project, e.g., a web application or system].
+This website offers basic functionalities of Music Player System with some additional features like personal user library, audio visualizer for UI enhancement, songs statistic, etc.
 
 ## 📂 Features
-- Feature 1
-- Feature 2
-- Feature 3
+- Basic implemetation of Music Player
+- Personal User song Library
+- Song Liking System
+- Admin page (username: admin, password: admin123)
+- Audio Visualizer
 
 ## 🛠️ Requirements
 - XAMPP (or any other local server software with PHP, MySQL, and Apache)
@@ -35,20 +37,20 @@ A PHP and JavaScript-based project for [brief description of your project, e.g.,
 - Open phpMyAdmin:
     - URL: [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
 - Create a new database:
-    - Go to **Databases** → Enter a database name (e.g., `project_db`) → Click **Create**.
+    - Go to **Databases** → Enter a database name (e.g., `phpmicroproject`) → Click **Create**.
 - Import the `.sql` file:
     - Select the newly created database.
     - Click **Import** → Choose the `.sql` file from the project directory → Click **Go**.
 
 ### Configure Database Connection (if necessary)
 
-- Locate the database configuration file in your project (e.g., `config.php` or `db_connect.php`).
+- Locate the database configuration file in your project i.e. dbConnect.php.
 - Update the following values if needed:
     ```php
     $host = 'localhost';      // Database host
     $username = 'root';       // Database username (default: root)
     $password = '';           // Database password (default: empty)
-    $dbname = 'project_db';   // Database name
+    $dbname = 'phpmicroproject';   // Database name
     ```
 
 ### Run the Project
@@ -87,4 +89,4 @@ This project is licensed under the MIT License.
 
 ## 📞 Support
 
-For issues, feel free to open an issue on GitHub or contact me at [your email address].
+For issues, feel free to open an issue on GitHub or contact me at hkhan032004@gmail.com
