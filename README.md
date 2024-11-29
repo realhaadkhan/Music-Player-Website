@@ -20,7 +20,7 @@ This website offers basic functionalities of Music Player System with some addit
 
 - Clone the repository:
     ```bash
-    git clone https://github.com/your-username/your-repository.git
+    git clone https://github.com/realhaadkhan/Music-Player-Website.git
     ```
 - Or download the ZIP file:
     - Go to your GitHub repository.
